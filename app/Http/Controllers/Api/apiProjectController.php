@@ -10,7 +10,8 @@ class apiProjectController extends Controller
 {
     public function index(){
 
-        $projects = Project::all();
+        $projects = Project::with('technologies')->paginate(10);
+        // $projects = Project::all();
         return response()->json(
             [
                 'status'=> 200,
