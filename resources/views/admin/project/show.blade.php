@@ -18,9 +18,11 @@
             @if ($project->staff !== null)
                 <hr class="border border-danger border-2 opacity-100">
             @endif
-            <div>
-                <img src="{{asset('storage/' . $project->img)}}" alt="img">
-            </div>
+            @if ($project->img)
+                <div>
+                    <img src="{{ asset('storage/' . $project->img) }}" alt="img">
+                </div>
+            @endif
                 <hr class="border border-danger border-2 opacity-100">
             <div>
                 <p> Categoria: {{$project->type?->name}}</p>

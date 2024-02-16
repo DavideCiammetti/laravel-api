@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 Route::get('projects', [apiProjectController::class, 'index'])->name('apiProject');
+Route::get('projects/{slug}', [apiProjectController::class, 'show']);

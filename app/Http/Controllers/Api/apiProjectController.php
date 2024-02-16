@@ -14,9 +14,15 @@ class apiProjectController extends Controller
         // $projects = Project::all();
         return response()->json(
             [
-                'status'=> 200,
-                'data'=> $projects,
+                'status'=> true,
+                'result'=> $projects,
             ]
         );
+    }
+
+    public function show(string $slug){
+
+        $project = Project::where('slug', $slug)->first();
+        return response()->json($project);
     }
 }

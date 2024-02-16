@@ -25,9 +25,10 @@
                 <label for="staffInput" class="border rounded">Collaborators</label>
                 <input type="text" name="staff" class="ps-2 pt-1 pb-1 col-8 border-danger-b rounded" id="staffInput" value="{{old('staff')}}" placeholder="collaborators">
             </div>
+            {{-- img --}}
             <div class="mb-1">
                 <label for="formFile" class="border rounded">Immage</label>
-                <input class=" col-8 border-danger-b rounded @error('img') is-invalid @enderror" name="img" value="{{old('img')}}" type="file" id="formFile" placeholder="choose img">
+                <input class="col-8 border-danger-b rounded @error('img') is-invalid @enderror" name="img" type="file" id="formFile" placeholder="choose img">
               </div>
             @error('img')
                 <div class="alert alert-danger">{{ $message }}</div>

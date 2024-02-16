@@ -47,7 +47,7 @@ class ProjectController extends Controller
 
         // gestione immagini 
         if(isset($data['img'])){
-            $project->img = Storage::put('uploads',$data['img']);
+            $project->img = Storage::put('uploads', $data['img']);
         }
 
         $project->save();
