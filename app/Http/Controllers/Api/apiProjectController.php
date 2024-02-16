@@ -10,7 +10,7 @@ class apiProjectController extends Controller
 {
     public function index(){
 
-        $projects = Project::with('technologies')->paginate(10);
+        $projects = Project::with('technologies', 'type')->paginate(10);
         // $projects = Project::all();
         return response()->json(
             [
@@ -22,7 +22,7 @@ class apiProjectController extends Controller
 
     public function show(string $slug){
 
-        $project = Project::where('slug', $slug)->first();
+        $project = Project::where('slug', $slug)->with('technologies', 'type')->first();
         return response()->json($project);
     }
 }
